@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.primenumberfarms.farmtrak" >
+
+    <uses-sdk android:minSdkVersion="11" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <android:uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/farmtrack_launcher_logo1"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".SplashActivity"
+            android:label="@string/title_main"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name=".MainSelector"
+            android:label="@string/title_activity_main_selector" >
+        </activity>
+        <activity
+            android:name=".CattleManagement"
+            android:label="@string/title_activity_cattle_management" >
+        </activity>
+        <activity
+            android:name=".ShowAllCattle"
+            android:label="@string/title_activity_show_all_cattle" >
+        </activity>
+        <activity
+            android:name=".CowDetailActivity"
+            android:label="Cattle Details" >
+        </activity>
+        <activity
+            android:name=".SearchCattle"
+            android:label="@string/title_activity_search_cattle" >
+        </activity>
+        <activity
+            android:name=".CattleAdd"
+            android:label="@string/title_activity_cattle_add" >
+        </activity>
+    </application>
+
+</manifest>

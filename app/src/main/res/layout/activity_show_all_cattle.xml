@@ -1,0 +1,33 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.primenumberfarms.farmtrak.ShowAllCattle">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ClickToView"
+        android:textSize="18dp"
+        android:id="@+id/testView3"
+        android:singleLine="false"
+        android:paddingTop="2dp"
+        android:gravity="center"
+        android:layout_marginLeft="1dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="10dp"
+        />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/GetAllCowListView"
+        android:paddingTop="35dp"
+
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        />
+
+</RelativeLayout>

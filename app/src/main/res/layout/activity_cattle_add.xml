@@ -1,0 +1,108 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:fillViewport="false">
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="5dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="2dp"
+        android:stretchColumns="*"
+        >
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#666633"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tag"
+                android:textSize="20dp"
+                android:id="@+id/textView"
+                android:layout_column="0"
+                android:layout_weight="1" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/Tag"
+                android:textSize="20dp"
+
+                android:layout_column="1"
+                android:layout_weight="1" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#525229"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:id="@+id/textView"
+                android:textSize="20dp"
+
+                android:layout_column="0"
+                android:layout_weight="1" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/Name"
+                android:textSize="20dp"
+                android:layout_column="1"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#666633"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reg Number"
+                android:textSize="20dp"
+                android:id="@+id/textView"
+                android:layout_column="0"
+                android:layout_weight="1" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/RegNumber"
+                android:textSize="20dp"
+
+                android:layout_column="1"
+                android:layout_weight="1" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#525229"
+            >
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:stretchColumns="0,1"
+            android:text="@string/addCattle"
+            android:textColor="#525229"
+            />
+        </TableRow>
+
+    </TableLayout>
+
+</ScrollView>
