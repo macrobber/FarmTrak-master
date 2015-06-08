@@ -32,9 +32,9 @@ public class SearchCattle extends ActionBarActivity {
         this.uid = extras.getString("uid");
         this.Tag = (EditText) this.findViewById(R.id.searchCow);
 
-        Button bSearchCow = (Button) findViewById(R.id.btnSearchCow);
+        Button bSearchCattle = (Button) findViewById(R.id.btnSearchCow);
 
-        bSearchCow.setOnClickListener(new View.OnClickListener() {
+        bSearchCattle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sTag = Tag.getText().toString();

@@ -19,6 +19,8 @@
     <string name="ClickToView">Click to view more detail</string>
     <string name="searchCattle">Enter a Tag to search:</string>
     <string name="addCattle">Add Cattle</string>
+    <string name="RequiredField">Only Tag is Required.</string>
+    <string name="date">Date</string>
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

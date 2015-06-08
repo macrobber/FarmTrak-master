@@ -57,7 +57,7 @@ public class GetAllCowListViewAdapter extends BaseAdapter {
             cell = new ListCell();
             cell.Tag = (TextView) convertView.findViewById(R.id.Tag);
             cell.Name = (TextView) convertView.findViewById(R.id.Name);
-            cell.Brand = (TextView) convertView.findViewById(R.id.Brand);
+//            cell.Brand = (TextView) convertView.findViewById(R.id.Brand);
             cell.RegNumber = (TextView) convertView.findViewById(R.id.RegNumber);
 
             convertView.setTag(cell);  // set the tag so I can reuse it.
@@ -75,7 +75,7 @@ public class GetAllCowListViewAdapter extends BaseAdapter {
             // Populate the view using the JSON object
             cell.Tag.setText("Tag: "+jsonObject.getString("Tag"));
             cell.Name.setText("Name: "+jsonObject.getString("Name"));
-            cell.Brand.setText("Brand: "+jsonObject.getString("Brand"));
+//            cell.Brand.setText("Brand: "+jsonObject.getString("Brand"));
             cell.RegNumber.setText("RegNumber: "+jsonObject.getString("RegNumber"));
 
         }

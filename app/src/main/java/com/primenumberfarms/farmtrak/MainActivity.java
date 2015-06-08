@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
                 EditText editPW = (EditText) findViewById(R.id.editPassword);
                 String sEmail = editMail.getText().toString();
                 String sPW = editPW.getText().toString();
+
+                sEmail = sEmail.trim();
+
                 intent.putExtra("Email", sEmail);
                 intent.putExtra("PW", sPW);
                 startActivity(intent);
