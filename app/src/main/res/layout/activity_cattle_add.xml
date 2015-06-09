@@ -322,14 +322,17 @@
                 android:layout_column="0"
                 android:layout_weight="1" />
 
-            <EditText
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/WeaningDate"
                 android:textSize="20dp"
-
-                android:layout_column="1"
+                android:text="Click"
+                android:id="@+id/tWeaningDate"
+                android:onClick="onClick"
+                android:clickable="true"
+                android:layout_column="0"
                 android:layout_weight="1" />
+
 
         </TableRow>
 
@@ -443,7 +446,7 @@
         <TableRow
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:background="#666633"
+            android:background="#525229"
             >
 
             <TextView
@@ -468,7 +471,7 @@
         <TableRow
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:background="#525229"
+            android:background="#666633"
             >
 
             <TextView
@@ -493,7 +496,7 @@
         <TableRow
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:background="#666633"
+            android:background="#525229"
             >
 
             <TextView
@@ -520,7 +523,7 @@
         <TableRow
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:background="#525229"
+            android:background="#666633"
             >
 
             <TextView
@@ -545,7 +548,7 @@
         <TableRow
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:background="#666633"
+            android:background="#525229"
             >
 
             <TextView
@@ -571,7 +574,7 @@
         <TableRow
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:background="#525229"
+            android:background="#666633"
             >
 
             <TextView
@@ -596,7 +599,7 @@
         <TableRow
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:background="#666633"
+            android:background="#525229"
             >
 
             <TextView
@@ -608,21 +611,24 @@
                 android:layout_column="0"
                 android:layout_weight="1" />
 
-            <EditText
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/CalvingDate"
                 android:textSize="20dp"
-
-                android:layout_column="1"
+                android:text="Click"
+                android:id="@+id/tCalvingDate"
+                android:onClick="onClick"
+                android:clickable="true"
+                android:layout_column="0"
                 android:layout_weight="1" />
+
 
         </TableRow>
 
         <TableRow
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:background="#525229"
+            android:background="#666633"
             >
 
             <TextView
@@ -647,7 +653,7 @@
         <TableRow
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:background="#666633"
+            android:background="#525229"
             >
 
             <TextView
@@ -674,7 +680,7 @@
         <TableRow
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:background="#525229"
+            android:background="#666633"
             >
         <Button
             android:layout_width="match_parent"

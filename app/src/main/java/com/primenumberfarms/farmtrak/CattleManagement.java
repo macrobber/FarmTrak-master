@@ -23,14 +23,17 @@ public class CattleManagement extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cattle_management);
 
+// ************ Section for Back Button Here  *******************
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
+// ************ Section for Back Button Here  *******************
+
 
 //        ActionBar actionBar = getActionBar();
 //        actionBar.setDisplayHomeAsUpEnabled(true);
 
         Bundle extras = getIntent().getExtras();
-        if(extras == null) {
+        if (extras == null) {
             return;
         }
 
@@ -41,6 +44,7 @@ public class CattleManagement extends AppCompatActivity {
         TextView txtShowAllCows = (TextView) findViewById(R.id.testView2);
         TextView txtShowCattle = (TextView) findViewById(R.id.searchCattle);
         TextView txtAddCattle = (TextView) findViewById(R.id.AddCattle);
+        TextView txtDeactivateCattle = (TextView) findViewById(R.id.tDeleteCow);
 
 // ************* Block for onClick Listener ***********************
         txtShowAllCows.setOnClickListener((new View.OnClickListener() {
@@ -64,18 +68,32 @@ public class CattleManagement extends AppCompatActivity {
 
         }));
 // ************* Close this block
+
 // ************* Block for onClick Listener ***********************
-        txtAddCattle.setOnClickListener(new View.OnClickListener() {
+        txtAddCattle.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), CattleAdd.class);
                 intent.putExtra("uid", uid);
                 startActivity(intent);
             }
-        });
 
-
+        }));
 // ************* Close this block
+
+        // ************* Block for onClick Listener ***********************
+        txtDeactivateCattle.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), DeactivateCattle.class);
+                intent.putExtra("uid", uid);
+                startActivity(intent);
+            }
+
+        }));
+// ************* Close this block
+
+
 
     }
 
@@ -97,10 +115,12 @@ public class CattleManagement extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+// ***** Section for back button ******
         if(id==android.R.id.home) {
             onBackPressed();
             return true;
         }
+// ***** Section for back button ******
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {

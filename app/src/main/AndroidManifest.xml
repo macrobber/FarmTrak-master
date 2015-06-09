@@ -62,8 +62,11 @@
         <activity
             android:name=".CattleAdd"
             android:label="@string/title_activity_cattle_add"
-            android:windowSoftInputMode="stateHidden"
-            >
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".DeactivateCattle"
+            android:label="@string/title_activity_deactivate_cattle" >
         </activity>
     </application>
 

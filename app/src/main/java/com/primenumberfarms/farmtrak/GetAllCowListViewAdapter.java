@@ -2,7 +2,9 @@ package com.primenumberfarms.farmtrak;
 
 import android.app.Activity;
 import android.content.Context;
+import android.database.Cursor;
 import android.graphics.Color;
+import android.support.v4.widget.SimpleCursorAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +23,8 @@ public class GetAllCowListViewAdapter extends BaseAdapter {
     private JSONArray dataArray; // to handle the json being used
     private Activity activity; // activity to be inflated
     private static LayoutInflater inflater = null;
+
+    private int[] colors = new int[]{Color.parseColor("#525229"), Color.parseColor("#666633")};
 
     public GetAllCowListViewAdapter(JSONArray jArray, Activity a)
     {
@@ -46,11 +50,28 @@ public class GetAllCowListViewAdapter extends BaseAdapter {
         return position;
     } // also returns the position of the item
 
-    @Override
+// ***********  Added this ***********
+    public class AlternateRowCursorAdapter extends SimpleCursorAdapter {
+
+//    private int[] colors = new int[]{Color.parseColor("#F0F0F0"), Color.parseColor("#D2E4FC")};
+
+    //private int[] colors = new int[] { R., 0x30808080 };
+    public AlternateRowCursorAdapter(Context context, int layout, Cursor c,
+                                     String[] from, int[] to) {
+        super(context, layout, c, from, to);
+        }
+    }
+// ************* to here ******
+        @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
         // set up the convert view if it's null
         ListCell cell;
+
+//            View view = super.getView(position, convertView, parent);
+            int colorPos = position % colors.length;
+
+//            view.setBackgroundColor(colors[colorPos]);
         if(convertView==null)
         {  // so if it is null, it has not been used before - you must inflate the view first
             convertView = inflater.inflate(R.layout.get_all_cow_list_view_cell, null);
@@ -77,6 +98,7 @@ public class GetAllCowListViewAdapter extends BaseAdapter {
             cell.Name.setText("Name: "+jsonObject.getString("Name"));
 //            cell.Brand.setText("Brand: "+jsonObject.getString("Brand"));
             cell.RegNumber.setText("RegNumber: "+jsonObject.getString("RegNumber"));
+            convertView.setBackgroundColor(colors[colorPos]);
 
         }
         catch (JSONException e)

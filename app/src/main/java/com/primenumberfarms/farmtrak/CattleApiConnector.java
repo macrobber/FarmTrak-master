@@ -268,5 +268,57 @@ public class CattleApiConnector {
         return jArray;
     }
 
+    // what follows is exactly the same code as above - the only change is in the URL which
+    // was modified to pass a value in the URL code.
+    // look at UpdateCow.php for example on how to pull this from the URL string
+    public JSONArray DelCattle(String Tag, String uid)
+    {
+        String result = "";
+        InputStream isr = null;
+
+        try{
+            HttpURLConnection urlConnection = null;
+//            URL url = new URL("http://www.primenumberfarms.com/UpdateCow.php?Tag="+Tag+"&uid="+uid);
+            URL url = new URL("http://www.primenumberfarms.com/cattle/deactivate.php?uid="+uid+"&Tag="+Tag);
+
+            urlConnection = (HttpURLConnection) url.openConnection();
+            urlConnection.setRequestMethod("GET");
+            urlConnection.connect();
+
+            isr = urlConnection.getInputStream();
+        }
+        catch(Exception e) {
+            Log.e("LOG_TAG", "PN Error in http connection " + e.toString());
+        }
+        try {
+            BufferedReader reader = new BufferedReader (new InputStreamReader(isr, "iso-8859-1"),8);
+            StringBuilder sb = new StringBuilder();
+            String line = null;
+            while((line = reader.readLine()) != null) {
+                sb.append(line + "\n");
+            }
+            isr.close();
+
+            result = sb.toString();
+        }
+        catch (Exception e) {
+            Log.e("LOG_TAG", "PN Error converting result " + e.toString());
+        }
+
+        JSONArray jArray = null;
+
+        // Parse code goes here....
+        try {
+            jArray = new JSONArray(result);
+            //Theoreticaly, the above line of code actually pushes the result into a JSON array called jArray
+
+        }
+        catch (Exception e) {
+            Log.e("LOG_TAG", "Error parsing data " + e.toString());
+        }
+        return jArray;
+    }
+
+
 
 }

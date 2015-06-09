@@ -39,9 +39,7 @@ public class CattleAdd extends ActionBarActivity {
     private EditText Owner;
     private EditText PercentagePure;
     private EditText DryMatterIntake;
-//    private EditText BirthDate;
     private EditText BirthWeight;
-    private EditText WeaningDate;
     private EditText WeaningWeight;
     private EditText YearlingWeight;
     private EditText ColorMarkings;
@@ -52,12 +50,13 @@ public class CattleAdd extends ActionBarActivity {
     private EditText HornStatus;
     private EditText Breed;
     private EditText BodyScore;
-    private EditText CalvingDate;
     private EditText AmountPaid;
     private EditText AmountSold;
     private EditText Gender;
 
     private TextView txtBirthDate;
+    private TextView txtWeaningDate;
+    private TextView txtCalvingDate;
 
     private String sTag;
     private String sName;
@@ -86,9 +85,12 @@ public class CattleAdd extends ActionBarActivity {
 
     // variables for date picker here
 
-    Button btn;
     int year_x, month_x, day_x;
     static final int DILOG_ID = 0;
+    static final int DATE_PICKER_BIRTHDATE = 0;
+    static final int DATE_PICKER_WEANINGDATE = 1;
+    static final int DATE_PICKER_CALVINGDATE = 2;
+
     // variables for date picker here
 
 
@@ -105,7 +107,6 @@ public class CattleAdd extends ActionBarActivity {
             return;
         }
 
-        // Kill these two lines...
 
         this.uid = extras.getString("uid");
         this.Tag = (EditText) this.findViewById(R.id.Tag);
@@ -115,9 +116,7 @@ public class CattleAdd extends ActionBarActivity {
         this.Owner = (EditText) this.findViewById(R.id.Owner);
         this.PercentagePure = (EditText) this.findViewById(R.id.PercentagePure);
         this.DryMatterIntake = (EditText) this.findViewById(R.id.DryMatterIntake);
-//        this.BirthDate = (EditText) this.findViewById(R.id.BirthDate);
         this.BirthWeight = (EditText) this.findViewById(R.id.BirthWeight);
-        this.WeaningDate = (EditText) this.findViewById(R.id.WeaningDate);
         this.WeaningWeight = (EditText) this.findViewById(R.id.WeaningWeight);
         this.YearlingWeight = (EditText) this.findViewById(R.id.YearlingWeight);
         this.ColorMarkings = (EditText) this.findViewById(R.id.ColorMarkings);
@@ -128,15 +127,16 @@ public class CattleAdd extends ActionBarActivity {
         this.HornStatus = (EditText) this.findViewById(R.id.HornStatus);
         this.Breed = (EditText) this.findViewById(R.id.Breed);
         this.BodyScore = (EditText) this.findViewById(R.id.BodyScore);
-        this.CalvingDate = (EditText) this.findViewById(R.id.CalvingDate);
         this.AmountPaid = (EditText) this.findViewById(R.id.AmountPaid);
         this.AmountSold = (EditText) this.findViewById(R.id.AmountSold);
         this.Gender = (EditText) this.findViewById(R.id.Gender);
 
 
 
-        // **************************** Code for Date Picker Inside onCreate ***************************
+// **************************** Code for Date Picker Inside onCreate ***************************
         txtBirthDate = (TextView) findViewById(R.id.tBirthDate);
+        txtWeaningDate = (TextView) findViewById(R.id.tWeaningDate);
+        txtCalvingDate = (TextView) findViewById(R.id.tCalvingDate);
 //        bDate = (Button) findViewById(R.id.btnChangeDate);
 
         final Calendar cal = Calendar.getInstance();
@@ -148,9 +148,6 @@ public class CattleAdd extends ActionBarActivity {
         showDialogOnButtonClick();
         // **************************** Code for Date Picker Inside onCreate ***************************
 
-
-
-//        Button bSearchCow = (Button) findViewById(R.id.btnSearchCow);
         Button bAddCattle = (Button) findViewById(R.id.btnAddCattle);
         bAddCattle.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -164,9 +161,9 @@ public class CattleAdd extends ActionBarActivity {
                 sOwner = sOwner.trim();
                 sPercentagePure = PercentagePure.getText().toString();
                 sDryMatterIntake = DryMatterIntake.getText().toString();
-//                sBirthDate = BirthDate.getText().toString();
+                sBirthDate = txtBirthDate.getText().toString();
                 sBirthWeight = BirthWeight.getText().toString();
-                sWeaningDate = WeaningDate.getText().toString();
+                sWeaningDate = txtWeaningDate.getText().toString();
                 sWeaningWeight = WeaningWeight.getText().toString();
                 sYearlingWeight = YearlingWeight.getText().toString();
                 sColor = ColorMarkings.getText().toString();
@@ -182,14 +179,13 @@ public class CattleAdd extends ActionBarActivity {
                 sBreed = Breed.getText().toString();
                 sBreed = sBreed.trim();
                 sBodyScore = BodyScore.getText().toString();
-                sCalvingDate = CalvingDate.getText().toString();
+                sCalvingDate = txtCalvingDate.getText().toString();
                 sAmountPaid = AmountPaid.getText().toString();
                 sAmountSold = AmountSold.getText().toString();
                 sGender = Gender.getText().toString();
                 sGender = sGender.trim();
 
                 if(sTag != null) {
-
                     new AddCow().execute(new CattleApiConnector());
                 }
             }
@@ -197,12 +193,10 @@ public class CattleAdd extends ActionBarActivity {
     }
 
     // **************************** Code for Date Picker Outside onCreate***************************
+    // These establish onClickListeners for each of the textBoxes for date
     public void showDialogOnButtonClick() {
-//        btn = (Button) findViewById(R.id.btnChangeDate);
+
         txtBirthDate = (TextView) findViewById(R.id.tBirthDate);
-
-//        btn.setOnClickListener(
-
         txtBirthDate.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -210,17 +204,52 @@ public class CattleAdd extends ActionBarActivity {
                         showDialog(DILOG_ID);
                     }
                 }
-
         );
+        txtWeaningDate = (TextView) findViewById(R.id.tWeaningDate);
+        txtWeaningDate.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        showDialog(1);
+                    }
+                }
+        );
+
+        txtCalvingDate = (TextView) findViewById(R.id.tCalvingDate);
+        txtCalvingDate.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        showDialog(2);
+                    }
+                }
+        );
+
+
     }
 
+    // Now call the correct Dialog Listener based  on which text listener was triggered
     @Override
     protected Dialog onCreateDialog(int id) {
+
+        switch (id) {
+            case DATE_PICKER_BIRTHDATE:
+                return new DatePickerDialog(this, dpickerListner, year_x, month_x, day_x);
+            case DATE_PICKER_WEANINGDATE:
+                return new DatePickerDialog(this, dpickerListnerWeaning, year_x, month_x, day_x);
+            case DATE_PICKER_CALVINGDATE:
+                return new DatePickerDialog(this, dpickerListnerCalving, year_x, month_x, day_x);
+        }
+        return null;
+
+/*
         if(id == DILOG_ID)
             return new DatePickerDialog(this, dpickerListner, year_x, month_x, day_x);
         return null;
+*/
     }
 
+    // Process the listener - set the text field to what the picker returned.
     private DatePickerDialog.OnDateSetListener dpickerListner
             = new DatePickerDialog.OnDateSetListener() {
         @Override
@@ -228,16 +257,41 @@ public class CattleAdd extends ActionBarActivity {
             year_x = year;
             month_x = monthOfYear + 1;
             day_x = dayOfMonth;
-            Toast.makeText(getApplicationContext(), year_x + "/" + month_x + "/" + day_x, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), year_x + "-" + month_x + "-" + day_x, Toast.LENGTH_SHORT).show();
             txtBirthDate.setText(new StringBuilder()
-                .append(year_x).append("/").append(month_x).append("/").append(day_x)
+                .append(year_x).append("-").append(month_x).append("-").append(day_x)
 
             );
         }
     };
 
+    private DatePickerDialog.OnDateSetListener dpickerListnerWeaning
+            = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+            year_x = year;
+            month_x = monthOfYear;
+            day_x = dayOfMonth;
+            txtWeaningDate.setText(new StringBuilder()
+                            .append(year_x).append("-").append(month_x).append("-").append(day_x)
 
+            );
+        }
+    };
 
+    private DatePickerDialog.OnDateSetListener dpickerListnerCalving
+            = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+            year_x = year;
+            month_x = monthOfYear;
+            day_x = dayOfMonth;
+            txtCalvingDate.setText(new StringBuilder()
+                            .append(year_x).append("-").append(month_x).append("-").append(day_x)
+
+            );
+        }
+    };
 
     // **************************** Date Picker runs to here outside onCreate***********************
 
@@ -291,9 +345,9 @@ public class CattleAdd extends ActionBarActivity {
                 Owner.setText("");
                 PercentagePure.setText("");
                 DryMatterIntake.setText("");
-//                BirthDate.setText("");
+                txtBirthDate.setText("");
                 BirthWeight.setText("");
-                WeaningDate.setText("");
+                txtWeaningDate.setText("");
                 WeaningWeight.setText("");
                 YearlingWeight.setText("");
                 ColorMarkings.setText("");
@@ -304,7 +358,7 @@ public class CattleAdd extends ActionBarActivity {
                 HornStatus.setText("");
                 Breed.setText("");
                 BodyScore.setText("");
-                CalvingDate.setText("");
+                txtCalvingDate.setText("");
                 AmountPaid.setText("");
                 AmountSold.setText("");
                 Gender.setText("");
