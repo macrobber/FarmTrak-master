@@ -47,7 +47,7 @@ public class DeactivateCattle extends ActionBarActivity {
 
 
                 new AlertDialog.Builder(DeactivateCattle.this)
-                        .setTitle("Deactivate entry")
+                        .setTitle("Deactivate Entry")
                         .setMessage("Are you sure you want to deactivate this entry?")
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {

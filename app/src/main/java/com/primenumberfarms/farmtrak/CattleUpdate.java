@@ -10,17 +10,16 @@ import android.widget.Button;
 import android.widget.EditText;
 
 
-public class SearchCattle extends ActionBarActivity {
+public class CattleUpdate extends ActionBarActivity {
 
     private String uid;
     private EditText Tag;
     private String sTag;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_cattle);
+        setContentView(R.layout.activity_cattle_update);
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
@@ -28,34 +27,31 @@ public class SearchCattle extends ActionBarActivity {
         if(extras == null) {
             return;
         }
-
         this.uid = extras.getString("uid");
-        this.Tag = (EditText) this.findViewById(R.id.searchCow);
 
-        Button bSearchCattle = (Button) findViewById(R.id.btnSearchCow);
+        Tag = (EditText) findViewById(R.id.Tag);
 
-        bSearchCattle.setOnClickListener(new View.OnClickListener() {
+        Button bUpdateCattle = (Button) findViewById(R.id.btnUpdateCow);
+
+        bUpdateCattle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sTag = Tag.getText().toString();
 
-                Intent showDetails = new Intent(getApplicationContext(), CowDetailActivity.class);
-                //showDetails.putExtra("Tag", cowClicked.get("Tag"));
+                Intent showDetails = new Intent(getApplicationContext(), CattleUpdateDetails.class);
                 showDetails.putExtra("Tag", sTag);
                 showDetails.putExtra("uid", uid);
 
                 startActivity(showDetails);
-
             }
         });
-
 
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_search_cattle, menu);
+        getMenuInflater().inflate(R.menu.menu_cattle_update, menu);
         return true;
     }
 

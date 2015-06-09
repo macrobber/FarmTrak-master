@@ -118,6 +118,7 @@ public class ShowAllCattle extends ActionBarActivity {
         if(id==android.R.id.home) {
 //            NavUtils.navigateUpFromSameTask(this);
             onBackPressed();
+            finish();
             return true;
         }
         //noinspection SimplifiableIfStatement

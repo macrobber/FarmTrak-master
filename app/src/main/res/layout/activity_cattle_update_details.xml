@@ -669,17 +669,15 @@
             android:layout_height="fill_parent"
             android:background="#666633"
             >
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/btnAddCattle"
-            android:layout_gravity="left"
-            android:stretchColumns="0,1"
-            android:text="@string/addCattle"
-            android:textColor="#525229"
-            />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/btnAddCattle"
+                android:layout_gravity="left"
+                android:stretchColumns="0,1"
+                android:text="@string/updateCattleBnt"
+                android:textColor="#525229"
+                />
         </TableRow>
-
     </TableLayout>
-
 </ScrollView>

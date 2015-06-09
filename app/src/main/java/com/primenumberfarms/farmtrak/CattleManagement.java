@@ -45,6 +45,7 @@ public class CattleManagement extends AppCompatActivity {
         TextView txtShowCattle = (TextView) findViewById(R.id.searchCattle);
         TextView txtAddCattle = (TextView) findViewById(R.id.AddCattle);
         TextView txtDeactivateCattle = (TextView) findViewById(R.id.tDeleteCow);
+        TextView txtEditCattle = (TextView) findViewById(R.id.tEditCow);
 
 // ************* Block for onClick Listener ***********************
         txtShowAllCows.setOnClickListener((new View.OnClickListener() {
@@ -93,6 +94,16 @@ public class CattleManagement extends AppCompatActivity {
         }));
 // ************* Close this block
 
+        // ************* Block for onClick Listener ***********************
+        txtEditCattle.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), CattleUpdate.class);
+                intent.putExtra("uid", uid);
+                startActivity(intent);
+            }
+        }));
+// ************* Close this block
 
 
     }
@@ -118,6 +129,7 @@ public class CattleManagement extends AppCompatActivity {
 // ***** Section for back button ******
         if(id==android.R.id.home) {
             onBackPressed();
+            finish();
             return true;
         }
 // ***** Section for back button ******

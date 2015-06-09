@@ -312,6 +312,7 @@ public class CattleAdd extends ActionBarActivity {
 
         if(id==android.R.id.home) {
             onBackPressed();
+            finish();
             return true;
         }
 

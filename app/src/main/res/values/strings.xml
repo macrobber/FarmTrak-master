@@ -17,9 +17,12 @@
     <string name="deleteCow">Deactivate Cattle</string>
     <string name="searchCow">Search Cattle</string>
     <string name="ClickToView">Click to view more detail</string>
-    <string name="searchCattle">Enter a Tag to search:</string>
+    <string name="searchCattle">Enter a Tag to Search:</string>
+    <string name="updateCattle">Enter a Tag to update:</string>
+
     <string name="deactivateText">Enter a Tag to Deactivate</string>
     <string name="addCattle">Add Cattle</string>
+    <string name="updateCattleBnt">Update Cattle</string>
     <string name="RequiredField">Only Tag is Required.</string>
     <string name="date">Date</string>
 
@@ -31,5 +34,7 @@
     <string name="title_activity_search_cattle">Search Cattle</string>
     <string name="title_activity_cattle_add">Add Cattle</string>
     <string name="title_activity_deactivate_cattle">Deactivate Cattle</string>
+    <string name="title_activity_cattle_update">Cattle Update</string>
+    <string name="title_activity_cattle_update_details">Cattle Update Details</string>
 
 </resources>

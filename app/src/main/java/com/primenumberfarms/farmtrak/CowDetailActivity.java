@@ -107,29 +107,7 @@ public class CowDetailActivity extends AppCompatActivity {
         {
             // we know we passed a tag....like...maybe???
             new GetCowDetails().execute(new CattleApiConnector());
-
         }
-/*
-        Button bUpdateCow = (Button) findViewById(R.id.btnUpdateCow);
-// This is update -- skip for now
-        bUpdateCow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                sName = Name.getText().toString();
-//                sBrand = Brand.getText().toString();
-                sRegNumber = RegNumber.getText().toString();
-
-//                Toast.makeText(getApplicationContext(), sName, Toast.LENGTH_LONG).show();
-                new UpdateCow().execute(new CattleApiConnector());
-
-
-                UpdateCowClicked(v, Tag, sName, sBrand, sRegNumber);
-
-            }
-        });
-*/
-
     }
     private void UpdateCowClicked(View v, String Tag, String Name, String Brand, String RegNumber) {
 
@@ -157,7 +135,6 @@ public class CowDetailActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if(id==android.R.id.home) {
-//            NavUtils.navigateUpFromSameTask(this);
             onBackPressed();
             return true;
         }
