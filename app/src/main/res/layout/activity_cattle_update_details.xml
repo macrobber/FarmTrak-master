@@ -672,7 +672,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/btnAddCattle"
+                android:id="@+id/btnUpdateCattle"
                 android:layout_gravity="left"
                 android:stretchColumns="0,1"
                 android:text="@string/updateCattleBnt"

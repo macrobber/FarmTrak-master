@@ -159,6 +159,10 @@ public class CowDetailActivity extends AppCompatActivity {
 //            JSONObject cow = jArray.getJSONObject(0);
             try {
                 JSONObject cow = jArray.getJSONObject(0);
+
+//                if(cow.getString("success") == "0")
+//                    Toast.makeText(getApplicationContext(), cow.getString("success"), Toast.LENGTH_LONG).show();
+
                 Name.setText(cow.getString("Name"));
                 RegNumber.setText(cow.getString("RegNumber"));
                 ElectronicID.setText(cow.getString("ElectronicID"));

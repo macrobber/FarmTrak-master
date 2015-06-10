@@ -131,8 +131,6 @@ public class CattleAdd extends ActionBarActivity {
         this.AmountSold = (EditText) this.findViewById(R.id.AmountSold);
         this.Gender = (EditText) this.findViewById(R.id.Gender);
 
-
-
 // **************************** Code for Date Picker Inside onCreate ***************************
         txtBirthDate = (TextView) findViewById(R.id.tBirthDate);
         txtWeaningDate = (TextView) findViewById(R.id.tWeaningDate);
@@ -146,7 +144,9 @@ public class CattleAdd extends ActionBarActivity {
 
 
         showDialogOnButtonClick();
-        // **************************** Code for Date Picker Inside onCreate ***************************
+// **************************** Code for Date Picker Inside onCreate ***************************
+
+// Code for the Update/Add button
 
         Button bAddCattle = (Button) findViewById(R.id.btnAddCattle);
         bAddCattle.setOnClickListener(new View.OnClickListener() {
@@ -190,7 +190,9 @@ public class CattleAdd extends ActionBarActivity {
                 }
             }
         });
-    }
+// end of code for Add / Edit button
+
+    } // Closes onCreate
 
     // **************************** Code for Date Picker Outside onCreate***************************
     // These establish onClickListeners for each of the textBoxes for date
