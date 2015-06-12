@@ -77,6 +77,14 @@
             android:label="@string/title_activity_cattle_update_details"
             android:windowSoftInputMode="stateHidden" >
         </activity>
+        <activity
+            android:name=".herdHealthSelector"
+            android:label="@string/title_activity_herd_health_selector" >
+        </activity>
+        <activity
+            android:name=".AddHealth"
+            android:label="@string/title_activity_add_health" >
+        </activity>
     </application>
 
 </manifest>

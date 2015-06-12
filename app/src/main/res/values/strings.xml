@@ -25,6 +25,9 @@
     <string name="updateCattleBnt">Update Cattle</string>
     <string name="RequiredField">Only Tag is Required.</string>
     <string name="date">Date</string>
+    <string name="heardHealth">Herd Health</string>
+    <string name="newHealth">Add Health Record</string>
+    <string name="viewHealth">View Health Records</string>
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -36,5 +39,7 @@
     <string name="title_activity_deactivate_cattle">Deactivate Cattle</string>
     <string name="title_activity_cattle_update">Cattle Update</string>
     <string name="title_activity_cattle_update_details">Cattle Update Details</string>
+    <string name="title_activity_herd_health_selector">Herd Health Selector</string>
+    <string name="title_activity_add_health">Add Health Record</string>
 
 </resources>

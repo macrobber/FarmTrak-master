@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 
 public class CattleManagement extends AppCompatActivity {
 
@@ -46,6 +48,7 @@ public class CattleManagement extends AppCompatActivity {
         TextView txtAddCattle = (TextView) findViewById(R.id.AddCattle);
         TextView txtDeactivateCattle = (TextView) findViewById(R.id.tDeleteCow);
         TextView txtEditCattle = (TextView) findViewById(R.id.tEditCow);
+        TextView txtHerdHealth = (TextView) findViewById(R.id.herdHealth);
 
 // ************* Block for onClick Listener ***********************
         txtShowAllCows.setOnClickListener((new View.OnClickListener() {
@@ -100,6 +103,17 @@ public class CattleManagement extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), CattleUpdate.class);
                 intent.putExtra("uid", uid);
+                startActivity(intent);
+            }
+        }));
+// ************* Close this block
+        // ************* Block for onClick Listener ***********************
+        txtHerdHealth.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), herdHealthSelector.class);
+                intent.putExtra("uid", uid);
+                intent.putExtra("AnimalType", "1");
                 startActivity(intent);
             }
         }));
